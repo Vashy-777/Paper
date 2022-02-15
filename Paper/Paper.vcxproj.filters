@@ -4,6 +4,9 @@
     <Filter Include="Paper">
       <UniqueIdentifier>{1DC3DD0D-89D7-05BF-5259-A91EBE2C02F0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Paper\Events">
+      <UniqueIdentifier>{612C4FE7-4D8F-DE8B-F614-1742E256AA0E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Paper.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Paper\EntryPoint.h">
       <Filter>Paper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Paper\Events\ApplicationEvent.h">
+      <Filter>Paper\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Paper\Events\Event.h">
+      <Filter>Paper\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Paper\Events\KeyEvent.h">
+      <Filter>Paper\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Paper\Events\MouseEvent.h">
+      <Filter>Paper\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Paper\Log.h">
       <Filter>Paper</Filter>

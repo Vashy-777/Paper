@@ -8,4 +8,6 @@
 	#endif 
 #else
 	#error Paper Engine only supports Windows!
-#endif 
+#endif
+
+#define BIT(x) (1 << x)
