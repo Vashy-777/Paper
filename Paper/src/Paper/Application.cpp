@@ -1,3 +1,4 @@
+#include "ppch.h"
 #include "Application.h"
 
 #include "Paper\Events\ApplicationEvent.h"

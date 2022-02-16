@@ -1,3 +1,4 @@
+#include <ppch.h>
 #include <Paper.h>
 
 class Sandbox : public Paper::Application

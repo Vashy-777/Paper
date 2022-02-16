@@ -3,9 +3,6 @@
 
 #include "Paper/core.h"
 
-#include <string>
-#include <functional>
-
 namespace Paper
 {
 	enum class EventType

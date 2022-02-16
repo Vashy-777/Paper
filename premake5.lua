@@ -18,6 +18,9 @@ project "Paper"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "ppch.h"
+	pchsource "Paper/src/ppch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
