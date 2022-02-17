@@ -1,7 +1,7 @@
 #pragma once
 
-
-#include "Paper/core.h"
+#include "ppch.h"
+#include "Paper/Core.h"
 
 namespace Paper
 {
