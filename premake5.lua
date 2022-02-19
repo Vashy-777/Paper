@@ -10,10 +10,13 @@ workspace "Paper"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "Paper/vendor/GLFW/include"
+IncludeDir["Glad"] = "Paper/vendor/Glad/include"
 
 include "Paper/vendor/GLFW"
+include "Paper/vendor/Glad"
 
 project "Paper"
 	location "Paper"
@@ -36,41 +39,47 @@ project "Paper"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "Off"
+		staticruntime "On"
 		systemversion "latest"
 
 		defines
 		{
 			"P_PLATFORM_WINDOWS",
-			"P_BUILD_DLL"
+			"P_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\")
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
 		}
 
 	filter "configurations:Debug"
 		defines "P_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Debug"
 		defines "P_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Debug"
 		defines "P_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "Sandbox"
@@ -100,7 +109,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "Off"
+		staticruntime "On"
 		systemversion "latest"
 
 	defines
@@ -110,12 +119,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "P_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Debug"
 		defines "P_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Debug"
 		defines "P_DIST"
+		buildoptions "/MD"
 		optimize "On"
