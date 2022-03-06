@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Paper/vendor/GLFW/include"
 IncludeDir["Glad"] = "Paper/vendor/Glad/include"
+IncludeDir["ImGui"] = "Paper/vendor/imgui"
 
 include "Paper/vendor/GLFW"
 include "Paper/vendor/Glad"
+include "Paper/vendor/imgui"
 
 project "Paper"
 	location "Paper"
@@ -32,7 +34,7 @@ project "Paper"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
 	}
 
 	includedirs
@@ -40,13 +42,15 @@ project "Paper"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 

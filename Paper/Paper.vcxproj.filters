@@ -7,8 +7,14 @@
     <Filter Include="Paper\Events">
       <UniqueIdentifier>{612C4FE7-4D8F-DE8B-F614-1742E256AA0E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Paper\ImGui">
+      <UniqueIdentifier>{075A4507-730F-BEFC-FC03-B8D368B8B400}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -34,6 +40,9 @@
     <ClInclude Include="src\Paper\Events\MouseEvent.h">
       <Filter>Paper\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Paper\ImGui\ImGuiLayer.h">
+      <Filter>Paper\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Paper\Layer.h">
       <Filter>Paper</Filter>
     </ClInclude>
@@ -46,6 +55,9 @@
     <ClInclude Include="src\Paper\Window.h">
       <Filter>Paper</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\WindowsWindow.h">
       <Filter>Platform</Filter>
     </ClInclude>
@@ -55,6 +67,9 @@
     <ClCompile Include="src\Paper\Application.cpp">
       <Filter>Paper</Filter>
     </ClCompile>
+    <ClCompile Include="src\Paper\ImGui\ImGuiLayer.cpp">
+      <Filter>Paper\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Paper\Layer.cpp">
       <Filter>Paper</Filter>
     </ClCompile>
@@ -63,6 +78,9 @@
     </ClCompile>
     <ClCompile Include="src\Paper\Log.cpp">
       <Filter>Paper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\WindowsWindow.cpp">
       <Filter>Platform</Filter>
